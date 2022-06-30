@@ -1,5 +1,6 @@
 # Task Automation with Python
 
+```bash
 .
 └── Trasks Automation with Python/
     └── examples/
@@ -11,3 +12,4 @@
         ├── web_scrapping.py
         ├── small_api.py
         └── data_visualization.py
+```
