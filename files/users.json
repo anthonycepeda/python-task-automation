@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "firstname": "pepe",
+    "lastname": "lopez",
+    "email": "my@me.com",
+    "email2": null,
+    "profession": "contable"
+  },
+  {
+    "id": 2,
+    "firstname": "ana",
+    "lastname": "collado",
+    "email": "my@me.com",
+    "email2": null,
+    "profession": "software engineer"
+  },
+  {
+    "id": 3,
+    "firstname": "anth",
+    "lastname": "cepeda",
+    "email": "my@me.com",
+    "email2": null,
+    "profession": "developer"
+  }
+]
