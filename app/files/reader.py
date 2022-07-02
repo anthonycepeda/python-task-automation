@@ -6,7 +6,7 @@ import pandas as pd
 
 from pydantic.types import Enum
 
-from utils.logger_config import set_logger
+from utils.logger import set_logger
 
 LOGGER = set_logger(__name__)
 
@@ -20,25 +20,50 @@ class Files(str, Enum):
 def load_file(file_name: str):
     """
     This funct. loads a file based on its path and type
-    i.e: load_file(file_name='users.csv')
+    example: load_file(file_name='users.csv')
     """
     file_type = _get_file_type(file_name)
-    file_path = Path() / "files" / file_name
+
+    # same as: file_path = "your/path/python-tasks-automation/files/file_name
+    file_path = Path() / "app" / "files" / "docs" / file_name
 
     LOGGER.info("file_type: %s", file_type)
     if file_type == Files.csv:
-        return _load_csv(file_path)
+        return load_csv(file_path)
 
     if file_type == Files.json:
-        return _load_json(file_path)
+        return load_json(file_path)
 
     if file_type == Files.xls:
-        return _load_xls(file_path)
+        return load_xls(file_path)
 
     return f"error: file_type: {file_type} not valid. Allowed values: (csv, json, xls)"
 
 
-def _load_csv(file_path: str):
+def load_file(file_name: str):
+    """
+    This funct. loads a file based on its path and type
+    example: load_file(file_name='users.csv')
+    """
+    file_type = _get_file_type(file_name)
+
+    # same as: file_path = "your/path/python-tasks-automation/files/file_name
+    file_path = Path() / "files" / "docs" / file_name
+
+    LOGGER.info("file_type: %s", file_type)
+    if file_type == Files.csv:
+        return load_csv(file_path)
+
+    if file_type == Files.json:
+        return load_json(file_path)
+
+    if file_type == Files.xls:
+        return load_xls(file_path)
+
+    return f"error: file_type: {file_type} not valid. Allowed values: (csv, json, xls)"
+
+
+def load_csv(file_path: str):
     try:
         with open(file_path) as csv_file:
             csv_reader = csv.DictReader(csv_file, delimiter=",")
@@ -53,7 +78,7 @@ def _load_csv(file_path: str):
         LOGGER.exception(str(e))
 
 
-def _load_json(file_path: str):
+def load_json(file_path: str):
     try:
         with open(file_path) as json_file:
             return json.load(json_file)
@@ -61,7 +86,7 @@ def _load_json(file_path: str):
         LOGGER.exception(str(e))
 
 
-def _load_xls(file_path: str):
+def load_xls(file_path: str):
     try:
         return pd.read_excel(file_path).to_dict(orient="records")
     except FileNotFoundError as e:

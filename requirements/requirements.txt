@@ -1,0 +1,6 @@
+black==22.6.0
+openpyxl==3.0.10
+pip-chill==1.0.1
+pylint==2.14.4
+sqlmodel==0.0.6
+streamlit==1.10.0
