@@ -6,7 +6,7 @@ import pandas as pd
 
 from pydantic.types import Enum
 
-from utils.logger import set_logger
+from app.utils.logger import set_logger
 
 LOGGER = set_logger(__name__)
 
@@ -23,34 +23,11 @@ def load_file(file_name: str):
     example: load_file(file_name='users.csv')
     """
     file_type = _get_file_type(file_name)
+    LOGGER.debug("%sload_file.type: %s", __name__, file_type)
 
-    # same as: file_path = "your/path/python-tasks-automation/files/file_name
     file_path = Path() / "app" / "files" / "docs" / file_name
+    LOGGER.debug("%sload_file.path: %s", __name__, file_path)
 
-    LOGGER.info("file_type: %s", file_type)
-    if file_type == Files.csv:
-        return load_csv(file_path)
-
-    if file_type == Files.json:
-        return load_json(file_path)
-
-    if file_type == Files.xls:
-        return load_xls(file_path)
-
-    return f"error: file_type: {file_type} not valid. Allowed values: (csv, json, xls)"
-
-
-def load_file(file_name: str):
-    """
-    This funct. loads a file based on its path and type
-    example: load_file(file_name='users.csv')
-    """
-    file_type = _get_file_type(file_name)
-
-    # same as: file_path = "your/path/python-tasks-automation/files/file_name
-    file_path = Path() / "files" / "docs" / file_name
-
-    LOGGER.info("file_type: %s", file_type)
     if file_type == Files.csv:
         return load_csv(file_path)
 

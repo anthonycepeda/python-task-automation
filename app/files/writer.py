@@ -6,7 +6,7 @@ from pathlib import Path
 import pandas as pd
 from pydantic.types import Enum, List
 
-from utils.logger import set_logger
+from app.utils.logger import set_logger
 
 LOGGER = set_logger(__name__)
 
@@ -31,7 +31,7 @@ def write_file(file_name: str, content: List[dict]):
     file_type = _get_file_type(file_name)
 
     # same as: file_path = "your/path/python-tasks-automation/files/file_name
-    file_path = Path() / "files" / "docs" / file_name
+    file_path = Path() / "app" / "files" / "docs" / file_name
 
     LOGGER.info("file_type: %s", file_type)
     if file_type == Files.csv:
@@ -59,14 +59,17 @@ def write_csv(file_path: str, content: List[dict]):
 
 def write_json(file_path: str, content: List[dict]):
     try:
+        updated = False
         current_content = load_json(file_path)
         with open(file_path, mode="w") as json_file:
             current_content.extend(content)
 
             json.dump(current_content, json_file, indent=4)
-            return True
+            updated = True
     except FileNotFoundError as e:
         LOGGER.exception(str(e))
+
+    return updated
 
 
 def write_xls(file_path: str):
