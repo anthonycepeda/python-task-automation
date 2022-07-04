@@ -5,6 +5,7 @@ from app.database.crud import create_user, read_users
 from app.database.models import UserCreate
 from app.files import reader, writer
 from app.utils.logger import set_logger
+from app.email import connect, send_mail
 
 logger = set_logger(__name__)
 
@@ -43,4 +44,17 @@ def get_users_from_database():
     users = read_users()
 
     for user in users:
-        print(user, "\n")
+        logger.info("%s", user)
+
+
+def connect_to_mail():
+    connect()
+
+
+def send_report():
+    content = {
+        "message": "This message has been sent from Python",
+        "receiver_email": "acpytest@gmail.com",
+        "subject": "[Test] Universidad Europea",
+    }
+    send_mail(content)
