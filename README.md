@@ -43,4 +43,4 @@ This app contains examples on how to:
     └── README.md
 ```
 
-#### TODO: emails and data visualization modules
+#### TODO: data visualization modules
