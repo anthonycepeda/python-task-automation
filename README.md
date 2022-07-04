@@ -12,8 +12,9 @@ This app contains examples on how to:
 ```bash
     $ python3 -m venv .venv # create virtual environment
     $ source .venv/bin/activate # for windows: source .venv\Scripts\activate
-    $ pip install -r requirements/requirements.txt # install packages
-    $ python entry.py # run app
+    $ pip install pipenv
+    $ pipenv install
+    $ pipenv run python entry.py # run app
 ```
 
 ## Project Tree:
