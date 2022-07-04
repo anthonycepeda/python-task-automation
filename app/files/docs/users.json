@@ -1,58 +1,22 @@
 [
     {
-        "uid": 1,
         "name": "pepe",
         "email": "my@me.com",
         "profession": "contable"
     },
     {
-        "uid": 2,
         "name": "ana",
         "email": "ana@me.com",
         "profession": "software engineer"
     },
     {
-        "uid": 3,
         "name": "anth",
         "email": "my@me.com",
         "profession": "developer"
     },
     {
-        "uid": 107,
         "name": "Alvaro",
         "email": "alc@me.com",
-        "profession": "officer"
-    },
-    {
-        "id": 107,
-        "firstname": "Alvaro",
-        "lastname": "Cruz",
-        "email": "alc@me.com",
-        "email2": "alc2@me.com",
-        "profession": "officer"
-    },
-    {
-        "id": 107,
-        "firstname": "Alvaro",
-        "lastname": "Cruz",
-        "email": "alc@me.com",
-        "email2": "alc2@me.com",
-        "profession": "officer"
-    },
-    {
-        "id": 107,
-        "firstname": "Alvaro",
-        "lastname": "Cruz",
-        "email": "alc@me.com",
-        "email2": "alc2@me.com",
-        "profession": "officer"
-    },
-    {
-        "id": 107,
-        "firstname": "Alvaro",
-        "lastname": "Cruz",
-        "email": "alc@me.com",
-        "email2": "alc2@me.com",
         "profession": "officer"
     }
 ]

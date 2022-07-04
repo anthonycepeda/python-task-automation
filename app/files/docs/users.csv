@@ -1,8 +1,5 @@
-id,firstname,lastname,email,email2,profession
-100,Clary,Olympium,Clary.Olympium@yopmail.com,Clary.Olympium@gmail.com,developer
-101,Robinia,Helfand,Robinia.Helfand@yopmail.com,Robinia.Helfand@gmail.com,worker
-102,Cam,Bethany,Cam.Bethany@yopmail.com,Cam.Bethany@gmail.com,doctor
-103,Josephine,Delacourt,Josephine.Delacourt@yopmail.com,Josephine.Delacourt@gmail.com,police officer
-104,Gui,Sadowski,Gui.Sadowski@yopmail.com,Gui.Sadowski@gmail.com,police officer
-105,Adriana,Ortrude,Adriana.Ortrude@yopmail.com,Adriana.Ortrude@gmail.com,doctor
-106,Nadine,Ursulette,Nadine.Ursulette@yopmail.com,Nadine.Ursulette@gmail.com,doctor107,Alvaro,Cruz,alc@me.com,alc2@me.com,officer
+name,email,profession
+pepe,my@me.com,contable
+ana,ana@me.com,software engineer
+anth,my@me.com,developer
+Alvaro,alc@me.com,officer
