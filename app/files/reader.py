@@ -3,7 +3,6 @@ import json
 from pathlib import Path
 
 import pandas as pd
-
 from pydantic.types import Enum
 
 from app.utils.logger import set_logger

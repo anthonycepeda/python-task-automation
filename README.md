@@ -25,7 +25,8 @@ This app contains examples on how to:
     │   ├── main.py
     │   ├── database/
     │   │      ├── __init__.py
-    │   │      ├── user.db
+    │   │      ├── crud.py
+    │   │      ├── models.py
     │   ├── files/
     │   │      ├── docs/users.csv, users.json, users.xls
     │   │      ├── __init__.py
@@ -37,6 +38,7 @@ This app contains examples on how to:
     │   │      ├── requirements.txt
     ├── .gitignore
     ├── .dot.env.example
+    ├── user.db
     └── README.md
 ```
 
