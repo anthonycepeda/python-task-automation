@@ -37,7 +37,7 @@ def send_mail(content: dict):
         LOGGER.info("connected to Gmail server")
 
         msg = MIMEText(content["message"])
-        msg["Subject"] = "Test mail with attachment"
+        msg["Subject"] = content["subject"]
         msg["From"] = sender_email
         msg["To"] = content["receiver_email"]
 
