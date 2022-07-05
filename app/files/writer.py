@@ -18,9 +18,9 @@ class OpenMode(str, Enum):
 
 
 class Files(str, Enum):
-    csv = "csv"
-    json = "json"
-    xls = "xls"
+    csv = ".csv"
+    json = ".json"
+    xls = ".xls"
 
 
 def write_file(file_name: str, content: List[dict]):
@@ -28,22 +28,21 @@ def write_file(file_name: str, content: List[dict]):
     This funct. write a given content in a file based on its path and type
     example: write_file(file_name='users.csv')
     """
-    file_type = _get_file_type(file_name)
 
-    # same as: file_path = "your/path/python-tasks-automation/files/file_name
+    # same as: file_path = "your/path/python-tasks-automation/files/file_name.something
     file_path = Path() / "app" / "files" / "docs" / file_name
+    LOGGER.info("file_type: %s", file_path.suffix)
 
-    LOGGER.info("file_type: %s", file_type)
-    if file_type == Files.csv:
+    if file_path.suffix == Files.csv:
         return write_csv(file_path, content)
 
-    if file_type == Files.json:
+    if file_path.suffix == Files.json:
         return write_json(file_path, content)
 
-    if file_type == Files.xls:
+    if file_path.suffix == Files.xls:
         return write_xls(file_path, content)
 
-    return f"error: file_type: {file_type} not valid. Allowed values: (csv, json, xls)"
+    return f"error: file_type: {file_path.suffix} not valid. Allowed values: (csv, json, xls)"
 
 
 def write_csv(file_path: str, content: List[dict]):
@@ -62,7 +61,7 @@ def write_json(file_path: str, content: List[dict]):
         updated = False
         current_content = load_json(file_path)
         with open(file_path, mode="w") as json_file:
-            current_content.extend(content)
+            current_content.append(content)
 
             json.dump(current_content, json_file, indent=4)
             updated = True
@@ -83,7 +82,7 @@ def load_json(file_path: str):
     try:
         with open(file_path) as json_file:
             return json.load(json_file)
-    except FileNotFoundError as e:
+    except (FileNotFoundError, json.decoder.JSONDecodeError) as e:
         LOGGER.exception(str(e))
 
 

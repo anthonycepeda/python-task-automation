@@ -50,7 +50,7 @@ def send_mail(content: dict):
             msg=msg.as_string(),
         )
         LOGGER.info("email sent to: %s", content["receiver_email"])
-        return f"email sent {content['receiver_email']}"
+        return f"email sent to: {content['receiver_email']}"
     except ConnectionError as e:
         LOGGER.exception(str(e))
     except smtplib.SMTPAuthenticationError as e:

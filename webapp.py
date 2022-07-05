@@ -4,11 +4,11 @@ import numpy as np
 
 import app
 
-st.title("Active Users")
+st.title("Users Report WebApp")
 
 DATE_COLUMN = "seniority"
 
-data = pd.DataFrame(app.load_a_file())
+data = pd.DataFrame(app.load_json_file())
 data[DATE_COLUMN] = pd.to_datetime(data[DATE_COLUMN])
 
 if st.checkbox("Show raw data"):
@@ -30,11 +30,12 @@ for index, row in data.iterrows():
 
 if seleted_data:
     st.table(seleted_data)
+    receiver_email = st.text_input("enter email:")
     if st.button("Send Report"):
         content = {
             "message": str(seleted_data),
-            "receiver_email": "acpytest@gmail.com",
+            "receiver_email": receiver_email,
             "subject": "[Test] Universidad Europea - webapp",
         }
         resp = app.send_report(content)
-        st.write(resp)
+        st.warning(resp)

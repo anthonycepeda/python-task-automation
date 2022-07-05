@@ -10,6 +10,7 @@ class Cities(str, Enum):
     alicante = "alicante"
     lisbon = "lisbon"
     santo_domingo = "santo domingo"
+    barcelona = "barcelona"
 
 
 class UserBase(SQLModel):

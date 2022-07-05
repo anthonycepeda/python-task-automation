@@ -1,5 +1,5 @@
 from sqlmodel import Session
-from pydantic.types import Optional
+from pydantic.types import Optional, List
 from app.database.crud import create_user, read_users
 from app.database.models import UserCreate
 from app.email import connect, send_mail
@@ -9,27 +9,18 @@ from app.utils.logger import set_logger
 logger = set_logger(__name__)
 
 
-def load_a_file():
+def load_json_file():
     file_name = "users.json"
 
     users = reader.load_file(file_name)
-    logger.debug("%s.load_a_file.users: %s", __name__, len(users))
+    logger.debug("%s.load_json_file.users: %s", __name__, len(users))
 
     return users
 
 
-def write_a_file():
-    file_name = "users.json"
-    users = [
-        {
-            "name": "Alvaro",
-            "email": "alc@me.com",
-            "profession": "officer",
-        }
-    ]
-
-    result = writer.write_file(file_name, users)
-    logger.debug("%s.write_a_file.%s - updated: %s", __name__, file_name, result)
+def add_user_file(user: UserCreate, file_name: str = "users.json"):
+    result = writer.write_file(file_name, user)
+    logger.debug("%s.add_user_file.%s - updated: %s", __name__, file_name, result)
 
     return result
 
