@@ -1,5 +1,8 @@
-name,email,profession
-pepe,my@me.com,contable
-ana,ana@me.com,software engineer
-anth,my@me.com,developer
-Alvaro,alc@me.com,officer
+name,email,profession,city,vehicule,seniority
+pepe,pepe@me.com,developer,madrid,false,2017-05-01
+natalia,natalia@me.com,security engineer,roma,true,2020-12-01
+john,john@me.com,driver,london,true,2018-09-01
+rakesh,rakesh@me.com,manager,paris,false,2022-02-01
+luis,luis@me.com,devops,alicante,true,2021-11-01
+alejandra,alejandra@me.com,developer,lisbon,true,2022-03-01
+anthony,anthony@me.com,developer,santo domingo,false,2019-11-01

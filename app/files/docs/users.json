@@ -1,22 +1,58 @@
 [
-    {
-        "name": "pepe",
-        "email": "my@me.com",
-        "profession": "contable"
-    },
-    {
-        "name": "ana",
-        "email": "ana@me.com",
-        "profession": "software engineer"
-    },
-    {
-        "name": "anth",
-        "email": "my@me.com",
-        "profession": "developer"
-    },
-    {
-        "name": "Alvaro",
-        "email": "alc@me.com",
-        "profession": "officer"
-    }
+  {
+    "name": "pepe",
+    "email": "pepe@me.com",
+    "profession": "developer",
+    "city": "madrid",
+    "vehicule": false,
+    "seniority": "2017-05-01"
+  },
+  {
+    "name": "natalia",
+    "email": "natalia@me.com",
+    "profession": "security engineer",
+    "city": "roma",
+    "vehicule": true,
+    "seniority": "2020-12-01"
+  },
+  {
+    "name": "john",
+    "email": "john@me.com",
+    "profession": "driver",
+    "city": "london",
+    "vehicule": true,
+    "seniority": "2018-09-01"
+  },
+  {
+    "name": "rakesh",
+    "email": "rakesh@me.com",
+    "profession": "manager",
+    "city": "paris",
+    "vehicule": false,
+    "seniority": "2022-02-01"
+  },
+  {
+    "name": "luis",
+    "email": "luis@me.com",
+    "profession": "devops",
+    "city": "alicante",
+    "vehicule": true,
+    "seniority": "2021-11-01"
+  },
+  {
+    "name": "alejandra",
+    "email": "alejandra@me.com",
+    "profession": "developer",
+    "city": "lisbon",
+    "vehicule": true,
+    "seniority": "2022-03-01"
+  },
+  {
+    "name": "anthony",
+    "email": "anthony@me.com",
+    "profession": "developer",
+    "city": "santo domingo",
+    "vehicule": false,
+    "seniority": "2019-11-01"
+  }
 ]
