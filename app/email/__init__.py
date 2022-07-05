@@ -13,7 +13,10 @@ To get an application password, go to your gmail account settings
 """
 
 sender_email = os.getenv("SENDER_EMAIL")
-sender_password = b64decode(os.getenv("SENDER_PASSWORD")).decode("utf-8")
+sender_password = os.getenv("SENDER_PASSWORD")
+
+if os.getenv("SENDER_PASSWORD"):
+    sender_password = b64decode(os.getenv("SENDER_PASSWORD")).decode("utf-8")
 
 
 def connect():
@@ -47,6 +50,7 @@ def send_mail(content: dict):
             msg=msg.as_string(),
         )
         LOGGER.info("email sent to: %s", content["receiver_email"])
+        return f"email sent {content['receiver_email']}"
     except ConnectionError as e:
         LOGGER.exception(str(e))
     except smtplib.SMTPAuthenticationError as e:
