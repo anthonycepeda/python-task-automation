@@ -5,7 +5,7 @@
         "profession": "developer",
         "city": "madrid",
         "vehicule": false,
-        "seniority": "2017-05-01"
+        "since": "2020"
     },
     {
         "name": "natalia",
@@ -13,7 +13,7 @@
         "profession": "security engineer",
         "city": "roma",
         "vehicule": true,
-        "seniority": "2020-12-01"
+        "since": "2021"
     },
     {
         "name": "john",
@@ -21,7 +21,7 @@
         "profession": "driver",
         "city": "london",
         "vehicule": true,
-        "seniority": "2018-09-01"
+        "since": "2022"
     },
     {
         "name": "rakesh",
@@ -29,7 +29,7 @@
         "profession": "manager",
         "city": "paris",
         "vehicule": false,
-        "seniority": "2022-02-01"
+        "since": "2022"
     },
     {
         "name": "luis",
@@ -37,7 +37,7 @@
         "profession": "devops",
         "city": "alicante",
         "vehicule": true,
-        "seniority": "2021-11-01"
+        "since": "2020"
     },
     {
         "name": "alejandra",
@@ -45,7 +45,7 @@
         "profession": "developer",
         "city": "lisbon",
         "vehicule": true,
-        "seniority": "2022-03-01"
+        "since": "2021"
     },
     {
         "name": "anthony",
@@ -53,6 +53,62 @@
         "profession": "developer",
         "city": "santo domingo",
         "vehicule": false,
-        "seniority": "2019-11-01"
+        "since": "2022"
+    },
+        {
+        "name": "esther",
+        "email": "esther@me.com",
+        "profession": "manager",
+        "city": "madrid",
+        "vehicule": true,
+        "since": "2020"
+    },
+    {
+        "name": "rosa",
+        "email": "rosa@me.com",
+        "profession": "developer",
+        "city": "roma",
+        "vehicule": true,
+        "since": "2021"
+    },
+    {
+        "name": "sandra",
+        "email": "sandra@me.com",
+        "profession": "devops",
+        "city": "london",
+        "vehicule": true,
+        "since": "2022"
+    },
+    {
+        "name": "loic",
+        "email": "loic@me.com",
+        "profession": "developer",
+        "city": "paris",
+        "vehicule": false,
+        "since": "2022"
+    },
+    {
+        "name": "ernesto",
+        "email": "ernesto@me.com",
+        "profession": "manager",
+        "city": "alicante",
+        "vehicule": true,
+        "since": "2020"
+    },
+    {
+        "name": "silvia",
+        "email": "silvia@me.com",
+        "profession": "security engineer",
+        "city": "lisbon",
+        "vehicule": true,
+        "since": "2021"
+    },
+    {
+        "name": "laura",
+        "email": "laura@me.com",
+        "profession": "developer",
+        "city": "lisbon",
+        "vehicule": false,
+        "since": "2022"
     }
 ]

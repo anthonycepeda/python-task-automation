@@ -1,8 +1,15 @@
-name,email,profession,city,vehicule,seniority
-pepe,pepe@me.com,developer,madrid,false,2017-05-01
-natalia,natalia@me.com,security engineer,roma,true,2020-12-01
-john,john@me.com,driver,london,true,2018-09-01
-rakesh,rakesh@me.com,manager,paris,false,2022-02-01
-luis,luis@me.com,devops,alicante,true,2021-11-01
-alejandra,alejandra@me.com,developer,lisbon,true,2022-03-01
-anthony,anthony@me.com,developer,santo domingo,false,2019-11-01
+name,email,profession,city,vehicule,since
+pepe,pepe@me.com,developer,madrid,false,2020
+natalia,natalia@me.com,security engineer,roma,true,2021
+john,john@me.com,driver,london,true,2022
+rakesh,rakesh@me.com,manager,paris,false,2022
+luis,luis@me.com,devops,alicante,true,2020
+alejandra,alejandra@me.com,developer,lisbon,true,2021
+anthony,anthony@me.com,developer,santo domingo,false,2022
+esther,esther@me.com,manager,madrid,true,2020
+rosa,rosa@me.com,developer,roma,true,2021
+sandra,sandra@me.com,devops,london,true,2022
+loic,loic@me.com,developer,paris,false,2022
+ernesto,ernesto@me.com,manager,alicante,true,2020
+silvia,silvia@me.com,security engineer,lisbon,true,2021
+laura,laura@me.com,developer,lisbon,false,2022
