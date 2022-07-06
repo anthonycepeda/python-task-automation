@@ -33,5 +33,9 @@ class UserCreate(UserBase):
     pass
 
 
+class UserUpdate(UserBase):
+    pass
+
+
 class UserRead(UserBase):
     id: int

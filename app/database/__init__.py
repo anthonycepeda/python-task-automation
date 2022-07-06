@@ -8,7 +8,7 @@ db_path = Path() / "user.db"
 engine = create_engine(f"sqlite:///{db_path}", echo=True, connect_args=connect_args)
 
 
-def create_tables():
+def create_database_tables():
     SQLModel.metadata.create_all(engine)
 
 

@@ -1,7 +1,7 @@
 from sqlmodel import Session, select
 
-from app.database import create_tables, get_session
-from app.database.models import User, UserCreate, UserRead
+from app.database import create_database_tables
+from app.database.models import User, UserCreate, UserRead, UserUpdate
 
 
 def create_user(user: UserCreate, db: Session):
@@ -18,7 +18,19 @@ def read_users(db: Session):
     return users
 
 
-def read_user(user_id: int, db: Session):
-    user = db.get(User, user_id)
+def read_user(uid: int, db: Session):
+    user = db.get(User, uid)
     if user:
         return user
+
+
+def update_user(user: UserUpdate, db: Session):
+    user_to_update = read_user(user.uid, db)
+    if user_to_update:
+        # user will be updated here
+        pass
+
+
+def delete_user():
+    # TODO
+    pass
