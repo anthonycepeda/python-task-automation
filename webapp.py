@@ -1,41 +1,72 @@
-import streamlit as st
-import pandas as pd
 import numpy as np
-
+import pandas as pd
+import seaborn as sns
+import streamlit as st
+from matplotlib.figure import Figure
+from app.database import get_session
 import app
+
+st.set_page_config(
+    page_title="Users Report", page_icon="📊", initial_sidebar_state="expanded"
+)
 
 st.title("Users Report WebApp")
 
-DATE_COLUMN = "seniority"
+DATE_COLUMN = "since"
 
-data = pd.DataFrame(app.load_file("users.json"))
-data[DATE_COLUMN] = pd.to_datetime(data[DATE_COLUMN])
+data = pd.DataFrame(app.get_users_from_database(get_session()))
+year_df = pd.DataFrame(data[DATE_COLUMN].dropna().value_counts()).reset_index()
+year_df = year_df.sort_values(by="index")
 
-if st.checkbox("Show raw data"):
-    st.subheader("Raw data")
+if st.checkbox("Show Table"):
+    st.subheader("Users")
     st.write(data)
 
-st.subheader("User since")
-hist_values = np.histogram(data[DATE_COLUMN].dt.month, bins=24, range=(0, 24))[0]
-st.bar_chart(hist_values)
+if st.checkbox("Show Json"):
+    st.subheader("Users")
+    st.json(data.to_dict(orient="records"))
 
 
-options = st.multiselect("Please select a user", data["name"])
+# bar
+st.subheader("Users Added")
+fig = Figure()
+ax = fig.subplots()
+sns.barplot(x=year_df["index"], y=year_df[DATE_COLUMN], ax=ax)
+ax.set_xlabel("Year")
+ax.set_ylabel("Users added")
+st.pyplot(fig)
 
-st.write("You selected:", options)
-seleted_data = []
-for index, row in data.iterrows():
-    if row["name"] in options:
-        seleted_data.append(row)
 
-if seleted_data:
-    st.table(seleted_data)
-    receiver_email = st.text_input("enter email:")
-    if st.button("Send Report"):
-        content = {
-            "message": str(seleted_data),
-            "receiver_email": receiver_email,
-            "subject": "[Test] Universidad Europea - webapp",
-        }
-        resp = app.send_report(content)
-        st.warning(resp)
+# cities
+fig = Figure()
+ax = fig.subplots()
+sns.stripplot(x="city", y="profession", data=data, ax=ax)
+ax.set_xlabel("Cities")
+ax.set_ylabel("Professions")
+st.pyplot(fig)
+
+
+# sidebar
+st.sidebar.subheader("Send Custom Report")
+add_selectbox = st.sidebar.multiselect(
+    "Please select users to be included in report", data["name"]
+)
+
+with st.sidebar:
+
+    seleted_data = []
+    for index, row in data.iterrows():
+        if row["name"] in add_selectbox:
+            seleted_data.append(row)
+
+    if seleted_data:
+        st.table(seleted_data)
+        receiver_email = st.text_input("Your Email:")
+        if st.button("Send Report"):
+            content = {
+                "message": str(seleted_data),
+                "receiver_email": receiver_email,
+                "subject": "[Test] Universidad Europea - webapp",
+            }
+            resp = app.send_report(content)
+            st.warning(resp)
