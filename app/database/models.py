@@ -19,7 +19,7 @@ class UserBase(SQLModel):
     profession: Optional[str]
     city: Optional[Cities]
     vehicule: Optional[bool]
-    seniority: Optional[str]
+    since: Optional[str]
 
     class Config:
         inherit_cache = False
@@ -27,6 +27,8 @@ class UserBase(SQLModel):
 
 class User(UserBase, table=True):
     uid: Optional[int] = Field(default=None, primary_key=True)
+
+    __table_args__ = {"extend_existing": True}
 
 
 class UserCreate(UserBase):
