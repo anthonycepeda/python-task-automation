@@ -3,9 +3,9 @@
 This app contains examples on how to:
 
 - read and write on files (csv, json and xls)
-- basic operations with databases [SQLmodel](https://sqlmodel.tiangolo.com/)
-- working with emails [Python STMP standard module](https://docs.python.org/3/library/smtplib.html)
-- data visualization [Streamlit](https://docs.streamlit.io/)
+- basic operations with databases using: [SQLmodel](https://sqlmodel.tiangolo.com/)
+- working with emails using: [Python STMP standard module](https://docs.python.org/3/library/smtplib.html)
+- data visualization using: [Streamlit](https://docs.streamlit.io/)
 
 ## Quick start:
 
