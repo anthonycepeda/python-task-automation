@@ -11,32 +11,35 @@ LOGGER = set_logger(__name__)
 
 
 class Files(str, Enum):
-    csv = "csv"
-    json = "json"
-    xls = "xls"
+    csv = ".csv"
+    json = ".json"
+    xls = ".xlsx"
 
 
 def load_file(file_name: str):
     """
-    This funct. loads a file based on its path and type
-    example: load_file(file_name='users.csv')
+    Returns a list of dictionaries with the content of a file
+    Parameter: file_name
+
+    Example: load_file('users.json')
+
     """
-    file_type = _get_file_type(file_name)
-    LOGGER.debug("%sload_file.type: %s", __name__, file_type)
-
-    file_path = Path() / "app" / "files" / "docs" / file_name
+    file_path = Path() / "docs" / file_name
     LOGGER.debug("%sload_file.path: %s", __name__, file_path)
+    LOGGER.debug("%sload_file.type: %s", __name__, file_path.suffix)
 
-    if file_type == Files.csv:
+    if file_path.suffix == Files.csv:
         return load_csv(file_path)
 
-    if file_type == Files.json:
+    if file_path.suffix == Files.json:
         return load_json(file_path)
 
-    if file_type == Files.xls:
+    if file_path.suffix == Files.xls:
         return load_xls(file_path)
 
-    return f"error: file_type: {file_type} not valid. Allowed values: (csv, json, xls)"
+    raise TypeError(
+        f"error: file type: {file_path.suffix} not valid. Allowed values: (csv, json, xls)"
+    )
 
 
 def load_csv(file_path: str):
@@ -67,14 +70,3 @@ def load_xls(file_path: str):
         return pd.read_excel(file_path).to_dict(orient="records")
     except FileNotFoundError as e:
         LOGGER.exception(str(e))
-
-
-def _get_file_type(file_name: str):
-    return file_name.split(".")[-1]
-
-
-# users = load_file("users.json")
-# users = load_file("users.csv")
-# users = load_file("users.xls")
-
-# print(json.dumps(users, indent=2))

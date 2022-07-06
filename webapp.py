@@ -8,7 +8,7 @@ st.title("Users Report WebApp")
 
 DATE_COLUMN = "seniority"
 
-data = pd.DataFrame(app.load_json_file())
+data = pd.DataFrame(app.load_file("users.json"))
 data[DATE_COLUMN] = pd.to_datetime(data[DATE_COLUMN])
 
 if st.checkbox("Show raw data"):

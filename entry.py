@@ -1,10 +1,9 @@
 if __name__ == "__main__":
     import app as app
-    from app.database import create_tables, get_session
+    from app.database import create_database_tables, get_session
     from app.database.models import UserCreate
 
-    create_tables()
-
+    # using UserCreate Model to create an user
     user = UserCreate(
         name="samuel",
         email="sam@me.com",
@@ -14,12 +13,16 @@ if __name__ == "__main__":
         seniority="2022-07-07",
     ).dict()
 
-    app.add_user_file(user)
+    app.add_user_to_file(user, "users.xlsx")
 
-    users = app.load_json_file()
+    # load users
+    users = app.load_file("users.json")
+    create_database_tables()
 
+    # adding users to database
     app.add_users_to_database(users, get_session())
 
+    # getting users from database
     app.get_users_from_database(get_session())
 
     mail_content = {
@@ -28,4 +31,5 @@ if __name__ == "__main__":
         "subject": "[Test] Universidad Europea",
     }
 
+    # sending an email
     app.send_report(mail_content)
