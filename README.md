@@ -23,13 +23,12 @@ This app contains examples on how to:
 .
 └── Trasks Automation with Python/
     ├── app/
-    │   ├── main.py
+    │   ├── __init__.py
     │   ├── database/
     │   │      ├── __init__.py
     │   │      ├── crud.py
     │   │      ├── models.py
     │   ├── files/
-    │   │      ├── docs/users.csv, users.json, users.xls
     │   │      ├── __init__.py
     │   │      ├── reader.py
     │   │      ├── writer.py
@@ -40,6 +39,7 @@ This app contains examples on how to:
     ├── .gitignore
     ├── .dot.env.example
     ├── user.db
+    ├── docs/users.csv, users.json, users.xlsx
     └── README.md
 ```
 

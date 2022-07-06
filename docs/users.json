@@ -54,13 +54,5 @@
         "city": "santo domingo",
         "vehicule": false,
         "seniority": "2019-11-01"
-    },
-    {
-        "name": "samuel",
-        "email": "sam@me.com",
-        "profession": "teacher",
-        "city": "barcelona",
-        "vehicule": false,
-        "seniority": "2022-07-07"
     }
 ]
