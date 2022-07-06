@@ -7,6 +7,9 @@ name = "pypi"
 sqlmodel = "*"
 streamlit = "*"
 openpyxl = "*"
+seaborn = "*"
+matplotlib = "*"
+python-decouple = "*"
 
 [dev-packages]
 black = "*"

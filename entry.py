@@ -10,7 +10,7 @@ if __name__ == "__main__":
         profession="teacher",
         city="barcelona",
         vehicule=False,
-        seniority="2022-07-07",
+        since="2022-07-07",
     ).dict()
 
     app.add_user_to_file(user, "users.xlsx")
